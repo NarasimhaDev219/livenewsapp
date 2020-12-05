@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:paddingBottom="@dimen/margin_top"
+    android:layout_marginHorizontal="@dimen/seven_dp"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/image_hight"
+        android:scaleType="fitXY"
+        android:src="@drawable/car5"
+        android:id="@+id/image_id"/>
+
+    <LinearLayout
+        android:background="@drawable/everrything_item_border"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/margin_top"
+        android:paddingVertical="@dimen/three_dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="author"
+            android:lines="1"
+            android:fontFamily="@font/sumana_language"
+            android:ellipsize="end"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:textSize="@dimen/text_size"
+            android:textColor="@color/white"
+            android:id="@+id/author_id"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="publishedAt"
+            android:layout_weight="1"
+            android:fontFamily="@font/sumana_language"
+            android:textSize="@dimen/text_size"
+            android:textStyle="bold"
+            android:textAlignment="textEnd"
+            android:textColor="@color/white"
+            android:id="@+id/publishedAt_id"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="title"
+        android:lines="1"
+        android:ellipsize="end"
+        android:textStyle="bold"
+        android:fontFamily="@font/headland_title"
+        android:paddingVertical="@dimen/five_dp"
+        android:textSize="@dimen/title_size"
+        android:paddingHorizontal="@dimen/margin_top"
+        android:textAlignment="textStart"
+        android:textColor="@color/white"
+        android:id="@+id/title_id"/>
+
+        <TextView
+            android:id="@+id/description_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/googlesans_bold"
+            android:lines="1"
+            android:paddingHorizontal="@dimen/margin_top"
+            android:paddingVertical="@dimen/three_dp"
+            android:text="description"
+            android:textAlignment="textStart"
+            android:textColor="@color/white"
+            android:textSize="@dimen/desc_size" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="content"
+        android:paddingHorizontal="@dimen/margin_top"
+        android:textSize="@dimen/desc_size"
+        android:paddingBottom="@dimen/five_dp"
+        android:lines="3"
+        android:fontFamily="@font/average_description"
+        android:ellipsize="end"
+        android:textAlignment="textStart"
+        android:textColor="@color/white"
+        android:id="@+id/content_id"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

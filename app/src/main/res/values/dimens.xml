@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="layout_hight">30dp</dimen>
+    <dimen name="margin_top">10dp</dimen>
+    <dimen name="image_hight">200dp</dimen>
+    <dimen name="three_dp">3dp</dimen>
+    <dimen name="text_size">12dp</dimen>
+    <dimen name="title_size">15dp</dimen>
+    <dimen name="desc_size">13dp</dimen>
+    <dimen name="five_dp">5dp</dimen>
+    <dimen name="seven_dp">7dp</dimen>
+</resources>
