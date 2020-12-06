@@ -60,24 +60,27 @@ public class HeadLinesFragment extends Fragment {
                 @Override
                 public void onResponse(Call<HeadLines> call, Response<HeadLines> response) {
                     progressbar_id.setVisibility(View.VISIBLE);
-                    System.out.println("=======asdjdjfbsjladjflsf+============="+response);
+                    System.out.println("=f===ghgdgfgas========" + call + ","+response);
                     headLine_array = new ArrayList<>();
                     headLine_array.clear();
                     HeadLines headLines_responce = response.body();
 //                    System.out.println("==sjdjfbasjdjbf==========="+status);
 
-                    if (response != null){
+                    if (headLines_responce != null ){
                         String results = String.valueOf(headLines_responce.getTotalResults());
                         String status  = headLines_responce.getStatus();
                         headLine_array = headLines_responce.getArticles();
                         System.out.println("=======asdjdjfbsjladjflsf+============="+headLine_array);
                         for (int i=0;i<= headLine_array.size();i++){
                             headLinesAdapter = new HeadLinesAdapter(getContext(),headLine_array);
+                            headLinesAdapter.notifyDataSetChanged();
                             recyclerheadline_id.setAdapter(headLinesAdapter);
-                          //  everythingAdapter = new EverythingAdapter(getContext(),eArrayList);
-                          //  recyclererthing_id.setAdapter(everythingAdapter);
                             progressbar_id.setVisibility(View.GONE);
                         }
+                    }else{
+                        progressbar_id.setVisibility(View.VISIBLE);
+                        Toast.makeText(getContext(),response.message(),Toast.LENGTH_LONG).show();
+                        Toast.makeText(getContext(),"Server Not Responding",Toast.LENGTH_LONG).show();
                     }
 
                 }

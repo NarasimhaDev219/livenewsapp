@@ -60,21 +60,26 @@ public class EverythingFragment extends Fragment {
                 @Override
                 public void onResponse(Call<Everything> call, Response<Everything> response) {
                     progressbar_id.setVisibility(View.VISIBLE);
-
+                    System.out.println("=f===ghgdgfgas========" + call + ","+response);
                     eArrayList = new ArrayList<>();
                     eArrayList.clear();
                     Everything everything = response.body();
-//                    System.out.println("==sjdjfbasjdjbf==========="+status);
+//
 
-                    if (response != null){
+                    if (everything != null){
                         String results = String.valueOf(everything.getTotalResults());
                         String status  = everything.getStatus();
                         eArrayList = everything.getArticles();
                         for (int i=0;i<= eArrayList.size();i++){
                             everythingAdapter = new EverythingAdapter(getContext(),eArrayList);
+                            everythingAdapter.notifyDataSetChanged();
                             recyclererthing_id.setAdapter(everythingAdapter);
                             progressbar_id.setVisibility(View.GONE);
                         }
+                    }else{
+                        progressbar_id.setVisibility(View.VISIBLE);
+                        Toast.makeText(getContext(),response.message(),Toast.LENGTH_LONG).show();
+                        Toast.makeText(getContext(),"Server Not Responding",Toast.LENGTH_LONG).show();
                     }
 
                 }

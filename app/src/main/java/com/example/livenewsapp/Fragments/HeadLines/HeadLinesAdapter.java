@@ -33,7 +33,7 @@ public class HeadLinesAdapter extends RecyclerView.Adapter<HeadLinesAdapter.View
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.everything_item_layout,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.headlines_item_layout,parent,false);
         return new ViewHolder(view);
     }
 
@@ -42,13 +42,13 @@ public class HeadLinesAdapter extends RecyclerView.Adapter<HeadLinesAdapter.View
 
         RequestOptions requestOptions = new RequestOptions()
                 .transform(new RoundedCorners(5));
-        Glide.with(context).load(hArray.get(position).getUrlToImage()).apply(requestOptions).into(holder.image_id);
+        Glide.with(context).load(hArray.get(position).getUrlToImage()).apply(requestOptions).into(holder.himage_id);
 
-        holder.author_id.setText(hArray.get(position).getAuthor());
-        holder.publishedAt_id.setText(hArray.get(position).getPublishedAt());
-        holder.title_id.setText(hArray.get(position).getTitle());
-        holder.description_id.setText(hArray.get(position).getDescription());
-        holder.content_id.setText(hArray.get(position).getContent());
+        holder.hauthor_id.setText(hArray.get(position).getAuthor());
+        holder.hpublishedAt_id.setText(hArray.get(position).getPublishedAt());
+        holder.htitle_id.setText(hArray.get(position).getTitle());
+        holder.hdescription_id.setText(hArray.get(position).getDescription());
+        holder.hcontent_id.setText(hArray.get(position).getContent());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,17 +66,17 @@ public class HeadLinesAdapter extends RecyclerView.Adapter<HeadLinesAdapter.View
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-       private ImageView image_id;
-       private TextView author_id,publishedAt_id,title_id,description_id,content_id;
+       private ImageView himage_id;
+       private TextView hauthor_id,hpublishedAt_id,htitle_id,hdescription_id,hcontent_id;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            image_id = itemView.findViewById(R.id.image_id);
-            author_id = itemView.findViewById(R.id.author_id);
-            publishedAt_id = itemView.findViewById(R.id.publishedAt_id);
-            title_id = itemView.findViewById(R.id.title_id);
-            description_id = itemView.findViewById(R.id.description_id);
-            content_id = itemView.findViewById(R.id.content_id);
+            himage_id = itemView.findViewById(R.id.himage_id);
+            hauthor_id = itemView.findViewById(R.id.hauthor_id);
+            hpublishedAt_id = itemView.findViewById(R.id.hpublishedAt_id);
+            htitle_id = itemView.findViewById(R.id.htitle_id);
+            hdescription_id = itemView.findViewById(R.id.hdescription_id);
+            hcontent_id = itemView.findViewById(R.id.hcontent_id);
 
 
         }

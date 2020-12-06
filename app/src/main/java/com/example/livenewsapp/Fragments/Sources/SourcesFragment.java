@@ -65,14 +65,18 @@ public class SourcesFragment extends Fragment {
 
                     SourceResponce sourceResponce = response.body();
 
-                    if (response != null){
+                    if (sourceResponce != null){
                         sArrayList = sourceResponce.getData();
                         for (int i=0;i<= sArrayList.size();i++){
                             sourcesAdapter = new SourcesAdapter(getContext(),sArrayList);
+                            sourcesAdapter.notifyDataSetChanged();
                             recycler_id.setAdapter(sourcesAdapter);
                             progressbar_id.setVisibility(View.GONE);
-
                         }
+                    }else{
+                        progressbar_id.setVisibility(View.VISIBLE);
+                        Toast.makeText(getContext(),response.message(),Toast.LENGTH_LONG).show();
+                        Toast.makeText(getContext(),"Server Not Responding",Toast.LENGTH_LONG).show();
                     }
                 }
 
